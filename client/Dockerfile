@@ -1,5 +1,5 @@
 # Development stage — Vite dev server with HMR
-FROM node:24-alpine AS dev
+FROM node:24.22.1-alpine AS dev
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ EXPOSE 4002
 CMD ["npm", "run", "dev", "--", "--host"]
 
 # Production stage — build and serve via nginx
-FROM node:24-alpine AS build
+FROM node:24.22.1-alpine AS build
 
 WORKDIR /app
 
