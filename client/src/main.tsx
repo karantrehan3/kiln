@@ -10,7 +10,10 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
+import { initialiseBuildInfo } from './lib/buildInfo';
 import { theme } from './theme';
+
+initialiseBuildInfo();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

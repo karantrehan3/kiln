@@ -20,6 +20,9 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
+# Render passes these as build args; read by vite/buildInfoPlugin.ts for window.BI()
+ARG RENDER_GIT_COMMIT
+ARG RENDER_GIT_BRANCH
 RUN npm run build
 
 FROM nginx:alpine AS prod
